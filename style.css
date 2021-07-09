@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+.main-div {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 50px;
+    min-height: 100vh;
+    background: url(/assets/images/cat-background.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-board-container {
+    min-height: 50vh;
+    width: 50%;
+    background: red;
+    display: flex;
+    justify-content: center;
+}
+
