@@ -7,15 +7,28 @@
     background: url(/assets/images/cat-background.jpg);
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .game-board-container {
-    min-height: 50vh;
-    width: 50%;
-    background: red;
+    min-height: 500px;
+    min-width: 500px;
+    background: #F2CCC3;
     display: flex;
     justify-content: center;
 }
 
+
+.game-board-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+span {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid yellow;
+}
