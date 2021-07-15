@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
+body {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
 .main-div {
     font-family: 'Nanum Pen Script', cursive;
     font-size: 50px;
     min-height: 100vh;
-    background: url(/assets/images/cat-background.jpg);
+    background: url(assets/images/cat-background.jpg);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -15,7 +21,8 @@
 .game-board-container {
     min-height: 500px;
     min-width: 500px;
-    background: #F2CCC3;
+    background: #F8FFE5;
+    padding: 10px;
     display: flex;
     justify-content: center;
 }
@@ -24,11 +31,88 @@
 .game-board-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
 }
 
-span {
+.icon {
+    height: 100px;
+    position: absolute;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     text-align: center;
     height: 100%;
     width: 100%;
-    border: 1px solid yellow;
+    background: #F2CCC3;
+    cursor: pointer;
+}
+
+.playerX {
+    background-image: url(assets/images/cat-icon.png);
+    background-size: auto 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.playerO {
+    background-image: url(assets/images/dog-icon.png);
+    background-size: auto 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.game-board-container.playerOnesTurn .cell:not(.playerX):not(.playerO):hover {
+    background-image: url(assets/images/cat-icon.png);
+    background-size: auto 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.game-board-container.playerTwosTurn .cell:not(.playerX):not(.playerO):hover {
+    background-image: url(assets/images/dog-icon.png);
+    background-size: auto 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.winning-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.winning-message.show {
+    display: flex;
+}
+
+.restart-button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .30em .8em;
+    cursor: pointer;
+    margin-top: .25em;
+}
+
+.winning-message-button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: white;
+    color: white;
 }
